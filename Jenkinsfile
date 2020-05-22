@@ -10,7 +10,7 @@ pipeline {
     
      stage('Lint dockerfile') {
         steps {
-            sh 'docker run --rm -i hadolint/hadolint < Dockerfile'
+            sh 'docker run --rm -i hadolint/hadolint --ignore DL3003 --ignore DL3006 < Dockerfile'
         }
     }
     stage('build docker image') {
