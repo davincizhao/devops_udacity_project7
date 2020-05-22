@@ -18,6 +18,11 @@ pipeline {
         sh 'docker build -t project_img .'
       }
     }
+    stage('docker container run ') {
+      steps {
+        sh 'docker container run --name project7 -p 8000:80 project_img'
+      }
+    }    
 
 
 
